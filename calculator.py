@@ -5,7 +5,7 @@ def calculator(expression):
     try:
         if regular_expression.search(r"0\s*\*\*\s*0", expression):
             raise ZeroDivisionError("0 to the power of 0 undefined")
-        print(eval(expression))
+        print(f"{expression} = {eval(expression)}")
     except (SyntaxError, NameError, ZeroDivisionError, TypeError, ValueError) as e:
         print(f"Error: {e}")
 
