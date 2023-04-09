@@ -3,6 +3,8 @@ import re as regular_expression
 
 def calculator(expression):
     try:
+        if not regular_expression.search(r'^[0-9+\-*/()**\s]+$', expression):
+            raise ValueError("expression can be number and mathematics operation")
         if regular_expression.search(r"0\s*\*\*\s*0", expression):
             raise ZeroDivisionError("0 to the power of 0 undefined")
         print(f"{expression} = {eval(expression)}")
